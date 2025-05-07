@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="LeaP">
+  <meta name="keywords" content="Reasoning, open-source, Scaling">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LeaP</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 120 100%22><text y=%22.9em%22 font-size=%2290%22>🦙</text></svg>">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <!-- Add jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Add Slick Carousel -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <!-- 修改后的初始化代码 -->
+
+  <style>
+    .slider {
+      width: 1400px; /* 设置轮播图容器的宽度 */
+      height: 600px; /* 设置轮播图容器的高度 */
+      margin: 0 auto; /* 居中显示 */
+      overflow: hidden; /* 隐藏超出容器的内容 */
+      position: relative; /* 相对定位，为了容器内的绝对定位元素而设置 */
+    }
+    
+    .slider img {
+      width: auto; /* 自动适应宽度 */
+      height: 450px; /* 高度自适应容器 */
+      display: block; /* 块级元素显示 */
+      margin: 0 auto; /* 图片水平居中 */
+    }
+    
+    /* 增大前后箭头按钮并居中 */
+    .slick-prev,
+    .slick-next {
+      display: block; /* 强制显示箭头 */
+      background-color: #ccc; /* 按钮背景色 */
+      color: #494242; /* 按钮文字颜色 */
+      border-radius: 50%; /* 圆形按钮 */
+      position: absolute; /* 绝对定位 */
+      top: 50%; /* 垂直居中 */
+      transform: translateY(-50%); /* 垂直居中 */
+      cursor: pointer; /* 鼠标指针样式 */
+      z-index: 1000; /* 确保在顶部 */
+      font-size: 20px; /* 按钮文字大小 */
+      line-height: 1; /* 确保文字垂直居中 */
+    }
+    
+    /* 调整左箭头位置 */
+    .slick-prev {
+      left: 50px; /* 左侧位置 */
+    }
+    
+    /* 调整右箭头位置 */
+    .slick-next {
+      right: 50px; /* 右侧位置 */
+    }
+    
+    .caption {
+      text-align: center; /* 居中显示 */
+      margin-top: 10px; /* 上边距 */
+    }
+  </style>
+  
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    };
+  </script>
+  </head>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Learning from Peers in Reasoning Models</h1>
+          <!-- <h2 class="title is-2 publication-title"></h2> -->
+          <!-- <h3 class="title is-3 publication-title">(NeurIPS 2024 Spotlight)</h3> -->
+          <div class="is-size-5">
+            <span class="author-block">
+                <a href="https://tongxuluo.github.io/" style="color:#008AD7;font-weight:normal;">Tongxu Luo<sup>1*</sup></a>,
+            </span>
+            <span class="author-block">
+              <a href="https://wenyudu.github.io/" style="color:#008AD7;font-weight:normal;">Wenyu Du<sup>2*</sup></a>,
+            </span>
+            <span class="author-block">
+              <a href="" style="color:#008AD7;font-weight:normal;">Jiaxi Bi<sup>3</sup></a>,
+            </span>
+            <br>
+            <span class="author-block">
+              <a href="https://stephen-c.com/" style="color:#008AD7;font-weight:normal;">Stephen Chung<sup>2</sup></a>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=2RRV0PQAAAAJ&hl=en" style="color:#008AD7;font-weight:normal;">Zhengyang Tang<sup>1</sup></a>,
+            </span>
+            <span class="author-block">
+              <a href="https://wabyking.github.io/old.html" style="color:#008AD7;font-weight:normal;">Benyou Wang<sup>1†</sup></a>
+            </span>
+            
+          </div>
+
+          <br>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><b style="color:#008AD7; font-weight:normal"></b><sup>1</sup>The Chinese University of Hong Kong, Shenzhen </span>
+            <br>
+            <span class="author-block"><b style="color:#008AD7; font-weight:normal"></b><sup>2</sup>DualityRL, </span>
+            <span class="author-block"><b style="color:#008AD7; font-weight:normal"></b><sup>3</sup>USTB</span>
+          </div>
+
+          <div class="is-size-5">
+            <span class="author-block"><sup>*</sup>Equal Contributions.</span>
+            <span class="author-block"><sup>†</sup>Corresponding Author.</span>
+          </div>
+
+          <br>
+         <!--  <div class="is-size-5 publication-authors">
+            <span class="author-block"><b style="color:#e08ba0; font-weight:normal"> <b>In CVPR2023</b> </b></span>
+          </div> -->
+
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2405.15319" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              
+              <span class="link-block">
+                <a href="https://github.com/tongxuluo/LeaP" target="_blank" 
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              
+              <span class="link-block">
+                      <a href="https://huggingface.co/Learning-from-Peers" target="_blank"
+                         class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        🤗
+                      </span>
+                      <span>Datasets & Models</span>
+                    </a>
+                  </span>
+              
+              <script>
+                  window.addEventListener('load', function() {
+                    const urls = [
+                      'https://bb0eec8976f38a480c.gradio.live',
+                      'https://94c50413658b59829f.gradio.live',
+                      'https://16440e488436f49d99.gradio.live',
+                      'https://02edd560d60615d755.gradio.live',
+                    ];
+                    const randomIndex = Math.floor(Math.random() * urls.length);
+                    const randomURL = urls[randomIndex];
+                    document.getElementById('randomLink').href = randomURL;
+                  });
+                </script>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div align="center">
+  <img src="./images/stacking_poster.png" width="256" height="256">
+</div>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            LLMs are computationally expensive to pre-train due to their large scale.
+            Model growth emerges as a promising approach by leveraging smaller models to accelerate the training of larger ones. 
+            However, the viability of these model growth methods in efficient LLM pre-training remains underexplored.
+            This work identifies three critical \(\underline{\textit{O}}\)bstacles: (\(\textit{O}\)1) lack of comprehensive evaluation, (\(\textit{O}\)2) untested viability for scaling, and (\(\textit{O}\)3) lack of empirical guidelines.
+            To tackle \(\textit{O}\)1, we summarize existing approaches into four atomic growth operators and systematically evaluate them in a standardized LLM pre-training setting.
+            Our findings reveal that a depthwise stacking operator, called \(G_{\text{stack}}\), exhibits remarkable acceleration in training, leading to decreased loss and improved overall performance on eight standard NLP benchmarks compared to strong baselines. 
+            Motivated by these promising results, we conduct extensive experiments to delve deeper into \(G_{\text{stack}}\) to address \(\textit{O}\)2 and \(\textit{O}\)3.
+            For \(\textit{O}\)2 (untested scalability), our study shows that \(G_{\text{stack}}\) is scalable and consistently performs well, with experiments up to 7B LLMs after growth and pre-training LLMs with 750B tokens.
+            For example, compared to a conventionally trained 7B model using 300B tokens, our \(G_{\text{stack}}\) model converges to the same loss with 194B tokens, resulting in a 54.6% speedup. 
+            We further address \(\textit{O}\)3 (lack of empirical guidelines) by formalizing guidelines to determine growth timing and growth factor for \(G_{\text{stack}}\), making it practical in general LLM pre-training.
+            We also provide in-depth discussions and comprehensive ablation studies of \(G_{\text{stack}}\).
+</b>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+    <br>
+    <br>
+    <!-- Paper Model. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths">
+        <h2 class="title is-3">Growth Operators</h2>
+        <div class="content has-text-justified">
+          <p>
+            <b>We summarize four $\textbf{atomic growth operators}$: $\textbf{(A)}$ directly duplicating and stacking old layers in a depthwise manner or splitting neurons in the same layer widthwisely, denoted as $G_\text{direct}$, $\textbf{(B)}$ generating expanded parameters using a learnable mapping matrix to the existing parameters, denoted as $G_{\text{learn}}$, $\textbf{(C)}$ setting the new parameters to zero, denoted as $G_{\text{zero}}$, and $\textbf{(D)}$ randomly initializing the new parameters, denoted as $G_{\text{random}}$. </b>:
+          </p>
+        </div>  
+        <img id="model" width="80%" src="images/overview.png">
+        <h3 class="subtitle has-text-centered">
+          <p style="font-family:Times New Roman"><b>The simplified illustration of four growth operators $G_{\text{direct}}$, $G_{\text{learn}}$, $G_{\text{zero}}$ and $G_{\text{random}}$, each of which can grow along widthwise (intra-layer) $G^{\to}$ or depthwise (layer-wise) $G^{\uparrow}$. Except $G_{\text{direct}}$, other three operators only illustrates the widthwise growth.</b></p>
+        </h3>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths">
+        <h3 class="title is-3">Illustrations</h3>
+        <div class="slider">
+          <div>
+            <img src="images/gif/g_stack.gif" alt="Stack GIF">
+            <p class="caption">Illustration of the $G_{\text{stack}}$ operator</p>
+          </div>
+          <div>
+            <img src="images/gif/g_split.gif" alt="Split GIF">
+            <p class="caption">Illustration of the $G_{\text{split}}$ operator</p>
+          </div>
+          <div>
+            <img src="images/gif/g_learn.gif" alt="Learn GIF">
+            <p class="caption">Illustration of the $G_{\text{learn}}$ operator</p>
+          </div>
+          <div>
+            <img src="images/gif/g_zero.gif" alt="Zero GIF">
+            <p class="caption">Illustration of the $G_{\text{zero}}$ operator</p>
+          </div>
+          <div>
+            <img src="images/gif/g_mask.gif" alt="Mask GIF">
+            <p class="caption">Illustration of the $G_{\text{random}}$ operator</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item g_stack">
+            <img id="g_stack" width="20%" src="images/gif/g_stack.gif">
+          </div>
+          <div class="item g_split">
+            <img id="g_split" width="20%" src="images/gif/g_split.gif">
+          </div>
+          <div class="item g_learn">
+            <img id="g_learn" width="20%" src="images/gif/g_learn.gif">
+          </div>
+          
+        </div>
+      </div>
+    </div> -->
+  </div>
+</section>
+
+<script>
+  $(document).ready(function(){
+    $('.slider').slick({
+      dots: true, // 显示导航点
+      infinite: true, // 无限循环
+      speed: 500, // 切换速度
+      slidesToShow: 2, // 每次显示的幻灯片数量
+      slidesToScroll: 1, // 每次滚动的幻灯片数量
+      prevArrow: '<button type="button" class="slick-prev">Previous</button>', // 上一个箭头
+      nextArrow: '<button type="button" class="slick-next">Next</button>', // 下一个箭头
+      adaptiveHeight: true, // 自适应高度
+      responsive: [
+        {
+          breakpoint: 768, // 断点宽度
+          settings: {
+            slidesToShow: 1, // 在断点下显示的幻灯片数量
+            slidesToScroll: 1 // 在断点下滚动的幻灯片数量
+          }
+        }
+      ]
+    });
+  });
+</script>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Main Results</h2>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths">
+        <img id="model" width="80%" src="images/results.jpg">
+        <h3 class="subtitle has-text-centered">
+          <p style="font-family:Times New Roman"><b>We evaluate operators using training loss and Lambada, ARC-c, ARC-e, Logiqa, PIQA, Sciq, Winogrande and Wikitext PPL totaling eight standard NLP benchmarks. After $8 \times 10^{20}$ FLOPs (100B tokens for scratch and approximate 90B tokens for operators) of training, $G_{\text{direct}}^\uparrow$ demonstrates a significant speedup.</b></p>
+        </h3>
+      </div>
+    </div>
+    <div class="columns is-centered">
+
+      <!-- 3B. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-4">3B</h2>
+          <p>
+            Training 3B LLMs with 300B tokens. $G_\text{stack}$ significantly outperforms scratch in loss.
+          </p>
+          <div class="item item-chair-tp">
+            <img src="./images/loss/3B.jpg" alt="3B-sp" id="3B-sp" height="100%">
+          </div>
+        </div>
+      </div>
+      <!--/ 3B. -->
+
+      <!-- 7B. -->
+      <div class="column">
+        <h2 class="title is-4">7B</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p>
+              Training 7B LLMs with 300B tokens. $G_\text{stack}$ significantly outperforms scratch in loss.
+            </p>
+            <div class="item item-chair-tp">
+              <img src="./images/loss/7B.jpg" alt="7B-sp" id="7B-sp" height="100%">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ 7B. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">TODO</h2>
+    <ul>
+      <li><input type="checkbox" checked disabled> Open source our code -- 2024.5.24</li>
+      <li><input type="checkbox" checked disabled> Open source our last checkpoints of main experiments -- 2024.5.29</li>
+      <!-- <li><input type="checkbox" disabled> Refactor our code to make it more concise -- 2024.7</li> -->
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{du2024stacking,
+      title={Stacking Your Transformers: A Closer Look at Model Growth for Efficient LLM Pre-Training},
+      author={Du, Wenyu and Luo, Tongxu and Qiu, Zihan and Huang, Zeyu and Shen, Yikang and Cheng, Reynold and Guo, Yike and Fu, Jie},
+      journal={arXiv preprint arXiv:2405.15319},
+      year={2024}
+    }
+</code></pre>
+  </div>
+</section>
+
+
+
+
+<section class="section" id="Acknowledgement">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Acknowledgement</h2>
+    <p>
+      This website is adapted from <a
+      href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, licensed under a <a rel="license"
+                                          href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+      Commons Attribution-ShareAlike 4.0 International License</a>.
+    </p>
+  </div>
+</section>
+
+</body>
+</html>
