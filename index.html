@@ -2,37 +2,27 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="LeaP">
-  <meta name="keywords" content="Reasoning, open-source, Scaling">
+  <meta name="description" content="Learning from Peers (LeaP) - Enabling Cross-path Interaction in Parallel Inferencen.">
+  <meta name="keywords" content="Large Reasoning Models">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LeaP</title>
+  <title>Learning from Peers in Reasoning Models</title>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-PYVRSFMDRL');
   </script>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro|Roboto" rel="stylesheet">
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 120 100%22><text y=%22.9em%22 font-size=%2290%22>🦘</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦘</text></svg>">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -40,86 +30,169 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <!-- Add jQuery -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <!-- Add Slick Carousel -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  <!-- 修改后的初始化代码 -->
 
   <style>
-    .slider {
-      width: 1400px; /* 设置轮播图容器的宽度 */
-      height: 600px; /* 设置轮播图容器的高度 */
-      margin: 0 auto; /* 居中显示 */
-      overflow: hidden; /* 隐藏超出容器的内容 */
-      position: relative; /* 相对定位，为了容器内的绝对定位元素而设置 */
+    body {
+      font-family: 'Roboto', sans-serif;
     }
-    
-    .slider img {
-      width: auto; /* 自动适应宽度 */
-      height: 450px; /* 高度自适应容器 */
-      display: block; /* 块级元素显示 */
-      margin: 0 auto; /* 图片水平居中 */
+    .publication-title {
+      font-family: 'Google Sans', sans-serif;
+      font-weight: bold;
     }
-    
-    /* 增大前后箭头按钮并居中 */
-    .slick-prev,
-    .slick-next {
-      display: block; /* 强制显示箭头 */
-      background-color: #ccc; /* 按钮背景色 */
-      color: #494242; /* 按钮文字颜色 */
-      border-radius: 50%; /* 圆形按钮 */
-      position: absolute; /* 绝对定位 */
-      top: 50%; /* 垂直居中 */
-      transform: translateY(-50%); /* 垂直居中 */
-      cursor: pointer; /* 鼠标指针样式 */
-      z-index: 1000; /* 确保在顶部 */
-      font-size: 20px; /* 按钮文字大小 */
-      line-height: 1; /* 确保文字垂直居中 */
+    .hero {
+      background-color: #f6f9fc; /* Lighter, more modern background */
     }
-    
-    /* 调整左箭头位置 */
-    .slick-prev {
-      left: 50px; /* 左侧位置 */
+    .author-block a {
+      color: #1a73e8; /* Google Blue for links */
+      font-weight: 500;
     }
-    
-    /* 调整右箭头位置 */
-    .slick-next {
-      right: 50px; /* 右侧位置 */
+    .author-block a:hover {
+      text-decoration: underline;
     }
-    
-    .caption {
-      text-align: center; /* 居中显示 */
-      margin-top: 10px; /* 上边距 */
+    .publication-links .button {
+      background-color: #1a73e8;
+      border: none;
+      transition: background-color 0.3s ease;
     }
+    .publication-links .button:hover {
+      background-color: #1765c2;
+    }
+    .section-title {
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: #3c4043; /* Darker grey for titles */
+    }
+    .content p, .content div {
+      line-height: 1.7;
+      color: #3c4043;
+    }
+    .content strong {
+        color: #1a73e8; /* Highlight key terms with theme color */
+    }
+    .custom-logo {
+      max-width: 300px; /* Adjust as needed */
+      margin-bottom: 2rem;
+    }
+
+    /* Slider Styles */
+    .case-study-slider {
+      width: 90%; /* Responsive width */
+      max-width: 1000px; /* Max width for larger screens */
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .case-study-slider .slide-item {
+      padding: 15px;
+      text-align: center;
+    }
+    .case-study-slider img {
+      width: 100%;
+      max-height: 800px; /* Control image height */
+      object-fit: contain; /* Ensure image fits well */
+      border-radius: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #e0e0e0;
+    }
+    .case-study-slider .caption {
+      font-size: 0.95em;
+      color: #5f6368;
+      line-height: 1.5;
+      min-height: 60px; /* Ensure consistent height for captions */
+    }
+    .slick-prev, .slick-next {
+      background-color: rgba(26, 115, 232, 0.8); /* Semi-transparent theme color */
+      color: white;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      z-index: 100;
+      display: flex !important; /* Ensure visibility */
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+    }
+    .slick-prev:hover, .slick-next:hover {
+      background-color: rgba(26, 115, 232, 1);
+    }
+    .slick-prev { left: -50px; } /* Adjust position based on your layout */
+    .slick-next { right: -50px; }
+    .slick-dots li button:before {
+      font-size: 10px;
+      color: #1a73e8;
+    }
+    .slick-dots li.slick-active button:before {
+      color: #1a73e8;
+      opacity: 1;
+    }
+
     .bordered-box {
-        padding: 15px;
-        border: 2px solid #000000;
-        border-radius: 8px;
-        margin-top: 20px;
-        background-color: #fafafa;
+      padding: 20px;
+      border: 1px solid #e0e0e0; /* Softer border */
+      border-radius: 8px;
+      margin-top: 20px;
+      background-color: #f8f9fa; /* Slightly off-white background */
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
     .prompt-text {
-        font-size: 18px;
-        line-height: 1.6;
-        color: #333;
+      font-size: 1.05em; /* Slightly larger for readability */
+      line-height: 1.7;
+      color: #3c4043;
     }
-    .orange-text {
-        color: orange;
-        font-weight: bold;
+    .orange-text { /* Consider a more descriptive name if not always orange */
+      color: #e67e22; /* A nice orange shade */
+      font-weight: bold;
     }
     .reflect-text {
-        color: #4CAF50;
-        font-style: italic;
+      color: #27ae60; /* A good green for positive reflection */
+      font-style: italic;
     }
     .trigger-text {
-        color: #8aedff;
-        font-weight: bold;
+      color: #2980b9; /* A distinct blue for triggers */
+      font-weight: bold;
     }
-    </style>
-  
+    .highlight-box {
+        background-color: #e3f2fd; /* Light blue background */
+        border-left: 5px solid #1a73e8;
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 5px;
+    }
+    .results-summary img {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .todo-list {
+        list-style: none;
+        padding-left: 0;
+    }
+    .todo-list li {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+    }
+    .todo-list input[type="checkbox"] {
+        margin-right: 10px;
+        transform: scale(1.2);
+    }
+    .bibtex-code {
+        background-color: #282c34; /* Dark background for code */
+        color: #abb2bf; /* Light text color */
+        padding: 15px;
+        border-radius: 5px;
+        font-family: 'Courier New', Courier, monospace;
+        white-space: pre-wrap;
+        word-break: break-all;
+    }
+  </style>
 
   <script>
     MathJax = {
@@ -128,7 +201,6 @@
       }
     };
   </script>
-  </head>
 </head>
 <body>
 
@@ -138,97 +210,70 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">Learning from Peers in Reasoning Models</h1>
-          <!-- <h2 class="title is-2 publication-title"></h2> -->
-          <!-- <h3 class="title is-3 publication-title">(NeurIPS 2024 Spotlight)</h3> -->
+          <h3 class="subtitle is-4" style="margin-top: -10px; color: #5f6368;">Enabling Cross-path Interaction in Parallel Inference</h3>
           <div class="is-size-5">
             <span class="author-block">
-                <a href="https://tongxuluo.github.io/" style="color:#008AD7;font-weight:normal;">Tongxu Luo<sup>1*</sup></a>,
+              <a href="https://tongxuluo.github.io/">Tongxu Luo<sup>1*</sup></a>,
             </span>
             <span class="author-block">
-              <a href="https://wenyudu.github.io/" style="color:#008AD7;font-weight:normal;">Wenyu Du<sup>2*</sup></a>,
+              <a href="https://wenyudu.github.io/">Wenyu Du<sup>2*</sup></a>,
             </span>
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?hl=zh-CN&user=M5Lu1KMAAAAJ" style="color:#008AD7;font-weight:normal;">Jiaxi Bi<sup>3</sup></a>,
+              <a href="https://scholar.google.com/citations?hl=zh-CN&user=M5Lu1KMAAAAJ">Jiaxi Bi<sup>3</sup></a>,
+            </span>
+            <span class="author-block">
+              <a href="https://stephen-c.com/">Stephen Chung<sup>2</sup></a>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=2RRV0PQAAAAJ&hl=en">Zhengyang Tang<sup>1</sup></a>,
             </span>
             <br>
             <span class="author-block">
-              <a href="https://stephen-c.com/" style="color:#008AD7;font-weight:normal;">Stephen Chung<sup>2</sup></a>,
+              <a href="https://wabyking.github.io/old.html">Hao Yang<sup>4</sup></a>
             </span>
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=2RRV0PQAAAAJ&hl=en" style="color:#008AD7;font-weight:normal;">Zhengyang Tang<sup>1</sup></a>,
+              <a href="https://wabyking.github.io/old.html">Min Zhang<sup>4</sup></a>
             </span>
             <span class="author-block">
-              <a href="https://wabyking.github.io/old.html" style="color:#008AD7;font-weight:normal;">Benyou Wang<sup>1†</sup></a>
+              <a href="https://wabyking.github.io/old.html">Benyou Wang<sup>1†</sup></a>
             </span>
-            
           </div>
 
           <br>
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><b style="color:#008AD7; font-weight:normal"></b><sup>1</sup>The Chinese University of Hong Kong, Shenzhen </span>
-            <br>
-            <span class="author-block"><b style="color:#008AD7; font-weight:normal"></b><sup>2</sup>DualityRL, </span>
-            <span class="author-block"><b style="color:#008AD7; font-weight:normal"></b><sup>3</sup>USTB</span>
+            <span class="author-block"><sup>1</sup>The Chinese University of Hong Kong, Shenzhen</span>,
+            <span class="author-block"><sup>2</sup>DualityRL</span>,
+            <span class="author-block"><sup>3</sup>USTB</span>,
+            <span class="author-block"><sup>4</sup>Huawei</span>
           </div>
 
-          <div class="is-size-5">
+          <div class="is-size-5" style="margin-top: 5px;">
             <span class="author-block"><sup>*</sup>Equal Contributions.</span>
             <span class="author-block"><sup>†</sup>Corresponding Author.</span>
           </div>
 
           <br>
-         <!--  <div class="is-size-5 publication-authors">
-            <span class="author-block"><b style="color:#e08ba0; font-weight:normal"> <b>In CVPR2023</b> </b></span>
-          </div> -->
-
-
           <div class="column has-text-centered">
             <div class="publication-links">
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2405.15319" target="_blank"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
+                <a href="TODO: Link_to_your_arXiv_paper" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
                   <span>Paper</span>
                 </a>
               </span>
-              
               <span class="link-block">
-                <a href="https://github.com/tongxuluo/LeaP" target="_blank" 
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
+                <a href="https://github.com/tongxuluo/LeaP" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
                   <span>Code</span>
-                  </a>
+                </a>
               </span>
-              
               <span class="link-block">
-                      <a href="https://huggingface.co/Learning-from-Peers" target="_blank"
-                         class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        🤗
-                      </span>
-                      <span>Datasets & Models</span>
-                    </a>
-                  </span>
-              
-              <script>
-                  window.addEventListener('load', function() {
-                    const urls = [
-                      'https://bb0eec8976f38a480c.gradio.live',
-                      'https://94c50413658b59829f.gradio.live',
-                      'https://16440e488436f49d99.gradio.live',
-                      'https://02edd560d60615d755.gradio.live',
-                    ];
-                    const randomIndex = Math.floor(Math.random() * urls.length);
-                    const randomURL = urls[randomIndex];
-                    document.getElementById('randomLink').href = randomURL;
-                  });
-                </script>
-              
-            </div>
+                <a href="https://huggingface.co/Learning-from-Peers" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">🤗</span>
+                  <span>Datasets & Models</span>
+                </a>
+              </span>
+              </div>
           </div>
         </div>
       </div>
@@ -236,217 +281,219 @@
   </div>
 </section>
 
-
-<div align="center">
-  <img src="./images/logo.png" width="384" height="384">
-</div>
-
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+         <img src="./images/logo.png" alt="LeaP Teaser Image" class="custom-logo">
+      </div>
+    </div>
+
+    <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3 section-title has-text-centered">Abstract</h2>
         <div class="content has-text-justified">
-          <p>Self-correction is a key factor in enabling reasoning models to excel in complex reasoning tasks. However, recent studies show that current reasoning models often become stuck in incorrect reasoning paths that are rarely corrected. 
-To this end, we design a sequel generation task to measure accuracy decline when the beginnings of responses are set to bad preludes—those likely to lead to incorrect answers. The significant performance drop observed in DeepSeek-R1-Distill-Qwen 7B, 14B, and QwQ-32B highlights their limited ability to recover from poor starting paths. 
-To enhance self-correction in reasoning models, we propose a learn from peers (LeaP) framework during parallel generation. 
-Concretely, for every \( T \) tokens, each generation summarizes its reasoning path and shares it with others through a routing mechanism. This allows models to refer to their peers' paths during their own reasoning processes. 
-We evaluate LeaP in both the inference phase (LeaP-I) and the training phase (LeaP-T), noting significant performance gains. QwQ-32B in LeaP-I exceeds the baseline on AIME2024, 2025, AIMO25, and GPQA Diamond by 4.61. It also outperforms R1-671B across AIME2024, 2025, and AIMO25, with an average improvement of 3.3. Additionally, Distill-7B with LeaP-T even matches the performance of Distill-14B in AIME2024. 
-Further ablation studies reveal that communication is most effective when it occurs early in the process. As a result, we propose LeaP-S, which communicates only once during the starting phase, allowing for comparison with single-run performance. 
-Our comprehensive analysis demonstrates that LeaP significantly reduces performance drops in the sequel generation task. This suggests that learning from peers can broaden the search space for further correction, addressing the limitations of sequential searches in reasoning models. 
-</b>
-          </p>
+          <p>Large Reasoning Models (LRMs) possess self-correction capabilities, yet they falter when reasoning paths begin poorly—a phenomenon we term the <strong>"Prefix Dominance Trap"</strong>. Inspired by psychological findings on peer interaction, we introduce <strong>Learning from Peers (LeaP)</strong>. In LeaP, every \( T \) tokens, reasoning paths summarize and share intermediate insights via a routing mechanism, enabling collaborative inference. For smaller models struggling with these instructions, we developed the fine-tuned <strong>LeaP-T</strong> series. Experiments on AIME 2024/2025, AIMO 2025, and GPQA Diamond demonstrate substantial improvements. Notably, QwQ-32B with LeaP surpasses its baseline by nearly 5 absolute points on average and outperforms DeepSeek-R1-671B on three math benchmarks. Our LeaP-T-7B matches DeepSeek-R1-Distill-Qwen-14B on AIME 2024. In-depth analysis confirms LeaP's robust error correction via timely peer insights, showcasing strong error tolerance and adaptability to varied task difficulties. LeaP signifies a step towards enabling collaborative reasoning in LRMs.</p>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
-    <br>
-    <br>
-    <!-- Paper Model. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-six-fifths">
-        <h2 class="title is-3">Learning from Peers Reasoning</h2>
+  </div>
+</section>
+
+<section class="section" style="background-color: #f8f9fa;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full has-text-centered">
+        <h2 class="title is-3 section-title">How LeaP Works: Fostering Collaborative Reasoning</h2>
         <div class="content has-text-justified">
-          <p>
-            <b>Our method facilitates the integration of multiple LeaP blocks into the reasoning process, allowing paths to learn from one another. During generation, after every $T$ tokens, we insert a LeaP block, which includes a summary generated by the current path, along with summaries from other peers</b>:
-          </p>
-        </div>  
-        <img id="model" width="80%" src="images/overview.png">
-        <h3 class="subtitle has-text-centered">
-          <p style="font-family:Times New Roman"><b>The illustration of (a) Independent Reasoning and (b) the proposed method, Learning from Peers (LeaP). In independent reasoning, multiple paths are generated independently in parallel. In contrast, LeaP inserts a LeaP block into each reasoning block, encouraging the model to learn from its peers.</b></p>
+          <p>Our method, Learning from Peers (LeaP), enhances the reasoning capabilities of Large Reasoning Models by enabling them to learn from each other during the inference process. Instead of isolated reasoning, multiple parallel reasoning paths engage in structured communication. After generating a certain number of tokens ($T$), each path pauses to summarize its current progress and insights. These summaries are then shared with other paths through a sophisticated routing mechanism. This allows individual paths to incorporate diverse perspectives and correct potential errors early on, effectively mitigating the "Prefix Dominance Trap".</p>
+        </div>
+        <img id="model-overview" width="90%" src="./images/overview.png" alt="Overview of LeaP vs Independent Reasoning">
+        <h3 class="subtitle has-text-centered" style="font-family:'Noto Sans', sans-serif; margin-top: 1rem; font-size: 1.1em; color: #5f6368;">
+          <b>Figure:</b> (a) Traditional Independent Reasoning where paths are generated in parallel without interaction. (b) Our proposed Learning from Peers (LeaP) method, which inserts LeaP blocks to facilitate cross-path communication and learning.
         </h3>
       </div>
     </div>
-    <h3 class="title is-3">The LeaP Block</h3>
-    <div class="container">
-      <div class="bordered-box"> <!-- This is the added border around the prompt -->
+
+    <div class="columns is-centered" style="margin-top: 2rem;">
+      <div class="column is-four-fifths">
+        <h3 class="title is-4 section-title has-text-centered">The Anatomy of a LeaP Block</h3>
+        <div class="content has-text-justified">
+          <p>A LeaP block is the core component enabling peer interaction. It consists of two main stages: <strong>Summarization</strong>, where each path distills its current state, and <strong>Routing</strong>, where these insights are strategically shared. The model is then prompted to consider these peer summaries before continuing its own reasoning.</p>
+        </div>
+        <div class="bordered-box">
           <div class="prompt-text">
-              <p> <span, class="prompt-text">...</span> </p>
-              <p<span class="trigger-text">Alright, let’s take a step back and summarize what we’ve figured out so far.</span></p>
-              <p><span, class="prompt-text">&lt;summarize&gt; </span><span class="orange-text">In short, my current conclusions are that</span> <span class="prompt-text">{Generated summary}</span> <span, class="prompt-text">&lt;/summarize&gt; </span></p>
-              <p class="peer-comments"><span class="reflect-text">Hmm, it seems that my peers have given me some comments, so let me check if anyone’s conclusions are different from mine before I continue my own reasoning.</span></p>
-              <p class="prompt-text">{Selected summaries from peers}</p>
-              <p> <span, class="prompt-text">...</span> </p>
+            <p>... [previous reasoning context] ...</p>
+            <p><span class="trigger-text">Alright, let’s take a step back and summarize what we’ve figured out so far.</span></p>
+            <p><span class="prompt-text">&lt;summarize&gt; </span><span class="orange-text">In short, my current conclusions are that</span> <span class="prompt-text">{Path's own generated summary, e.g., "The rhombus has vertices at (p,q), (r,s) on the hyperbola. Minimal BD squared is 980/119."}</span> <span class="prompt-text">&lt;/summarize&gt;</span></p>
+            <p class="reflect-text" style="margin-top: 10px; margin-bottom: 5px;">Hmm, it seems that my peers have given me some comments, so let me check if anyone’s conclusions are different from mine before I continue my own reasoning.</p>
+            <p class="prompt-text">
+              <span style="font-weight:bold; color: #3c4043;">&lt;peer_summary&gt;</span><br>
+              Peer 1: "{Summary from Peer 1, e.g., BD can be expressed as 80 + (22v)/3...}"<br>
+              Peer 2: "{Summary from Peer 2, e.g., Expressed BD in terms of t... BD approaches 480 as t approaches infinity...}"<br>
+              ...<br>
+              <span style="font-weight:bold; color: #3c4043;">&lt;/peer_summary&gt;</span>
+            </p>
+            <p style="margin-top: 10px;">... [model continues reasoning, incorporating peer insights] ...</p>
           </div>
-      </div>
-  </div>
-    <!--/ Paper video. -->
-    <!-- <div class="columns is-centered has-text-centered">
-      <div class="column is-six-fifths">
-        <h3 class="title is-3">Illustrations</h3>
-        <div class="slider">
-          <div>
-            <img src="images/gif/g_stack.gif" alt="Stack GIF">
-            <p class="caption">Illustration of the $G_{\text{stack}}$ operator</p>
-          </div>
-          <div>
-            <img src="images/gif/g_split.gif" alt="Split GIF">
-            <p class="caption">Illustration of the $G_{\text{split}}$ operator</p>
-          </div>
-          <div>
-            <img src="images/gif/g_learn.gif" alt="Learn GIF">
-            <p class="caption">Illustration of the $G_{\text{learn}}$ operator</p>
-          </div>
-          <div>
-            <img src="images/gif/g_zero.gif" alt="Zero GIF">
-            <p class="caption">Illustration of the $G_{\text{zero}}$ operator</p>
-          </div>
-          <div>
-            <img src="images/gif/g_mask.gif" alt="Mask GIF">
-            <p class="caption">Illustration of the $G_{\text{random}}$ operator</p>
+        </div>
+        <div class="content has-text-justified" style="margin-top: 1.5rem;">
+          <p>This structured interaction, exemplified in Figure 3 of our paper, allows paths to dynamically adjust their trajectories based on collective intelligence, leading to more robust and accurate reasoning.</p>
+          <div class="has-text-centered">
+             <img src="./images/LeaP_block.png" alt="Example of LeaP Communication" style="max-width: 100%; border: 1px solid #ddd; border-radius: 8px;">
+             <p style="font-family:'Noto Sans', sans-serif; font-size: 0.9em; color: #5f6368; margin-top:0.5rem;"><b>Figure:</b> An example illustrating how LeaP enables communication between reasoning paths (Path i and Path j).</p>
           </div>
         </div>
       </div>
     </div>
-     -->
-    <!-- <div class="hero-body">
-      <div class="container">
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="item g_stack">
-            <img id="g_stack" width="20%" src="images/gif/g_stack.gif">
-          </div>
-          <div class="item g_split">
-            <img id="g_split" width="20%" src="images/gif/g_split.gif">
-          </div>
-          <div class="item g_learn">
-            <img id="g_learn" width="20%" src="images/gif/g_learn.gif">
-          </div>
-          
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 section-title has-text-centered">Key Results & Improvements</h2>
+    <div class="content has-text-justified">
+        <p>Our comprehensive evaluations on challenging benchmarks like AIME 2024/2025, AIMO 2025, and GPQA Diamond demonstrate the significant advantages of LeaP and LeaP-T. </p>
+    </div>
+    <div class="highlight-box">
+        <p>Across four benchmarks, <strong>DeepSeek-R1-Distill-Qwen-7B with LeaP (Top-4 Dispersed routing) exceeds the baseline by an average of 6.49 points</strong>. Similarly, DeepSeek-R1-Distill-Qwen-14B with LeaP surpasses its baseline by 6.08 points. Impressively, <strong>QwQ-32B with LeaP even outperforms the much larger DeepSeek-R1-671B</strong> on all three math datasets. Our fine-tuned <strong>LeaP-T-7B model achieves performance comparable to DeepSeek-R1-Distill-Qwen-14B</strong> on AIME 2024.</p>
+    </div>
+
+    <div class="columns is-centered has-text-centered" style="margin-top:2rem;">
+      <div class="column is-full">
+        <h3 class="subtitle is-4 has-text-centered" style="font-family:'Google Sans', sans-serif; color: #3c4043;">Performance on Standard Benchmarks (Pass@1)</h3>
+        <img class="results-summary" id="main-results-table" width="100%" src="./images/results.jpg" alt="Main Results Table">
+        <p style="font-family:'Noto Sans', sans-serif; font-size: 0.9em; color: #5f6368; margin-top:0.5rem;"><b>Table:</b> LeaP significantly outperforms baselines across AIME 2024, AIME 2025, AIMO 2025, and GPQA Diamond. Different routing strategies (Clustered, Hybrid, Dispersed) and numbers of peers (Top-2, Top-4) are evaluated.</p>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered" style="margin-top:2rem;">
+      <div class="column is-half">
+        <h3 class="subtitle is-4 has-text-centered" style="font-family:'Google Sans', sans-serif; color: #3c4043;">Overcoming the "Prefix Dominance Trap"</h3>
+        <img class="results-summary" src="./images/prefix.jpg" alt="Prefix Dominance Trap Results">
+        <p style="font-family:'Noto Sans', sans-serif; font-size: 0.9em; color: #5f6368; margin-top:0.5rem;"><b>Figure:</b> Performance drop when starting with poor beginnings (Prefix Dominance Trap).</p>
+      </div>
+      <div class="column is-half">
+        <h3 class="subtitle is-4 has-text-centered" style="font-family:'Google Sans', sans-serif; color: #3c4043;">LeaP Mitigates the Trap</h3>
+        <img class="results-summary" src="./images/prefix_leap.jpg" alt="LeaP Mitigates Prefix Dominance Trap">
+        <p style="font-family:'Noto Sans', sans-serif; font-size: 0.9em; color: #5f6368; margin-top:0.5rem;"><b>Figure:</b> LeaP consistently reduces the performance gap caused by poor beginnings.</p>
+      </div>
+    </div>
+     <div class="columns is-centered has-text-centered" style="margin-top:2rem;">
+      <div class="column is-full">
+        <h3 class="subtitle is-4 has-text-centered" style="font-family:'Google Sans', sans-serif; color: #3c4043;">LeaP-T: Fine-tuned for Enhanced Collaboration</h3>
+        <img class="results-summary" id="leap-t-results-table" width="100%" src="./images/leap_t.jpg" alt="LeaP-T Results Table">
+        <p style="font-family:'Noto Sans', sans-serif; font-size: 0.9em; color: #5f6368; margin-top:0.5rem;"><b>Table:</b> Evaluation of our LeaP-T models (1.5B to 14B) on three math benchmarks, showing consistent improvements over baselines and non-fine-tuned LeaP.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background-color: #e3f2fd;">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 section-title has-text-centered">Case Studies: LeaP in Action</h2>
+    <p class="has-text-centered" style="margin-bottom: 2rem; color: #3c4043;">Explore how LeaP helps models correct their reasoning paths by learning from peers. Swipe through the examples below.</p>
+    <div class="case-study-slider">
+      <div class="slide-item">
+        <img src="./images/case_success.jpg" alt="Case Study 1: Successful Correction">
+        <div class="caption">
+          <strong>Successful Correction:</strong> Initially on an incorrect path, the model receives diverse summaries from peers. By identifying a more promising approach from a peer, it re-evaluates and reaches the correct answer.
         </div>
       </div>
-    </div> -->
+      <div class="slide-item">
+        <img src="./images/case_prefix.jpg" alt="Case Study 2: Overcoming Bad Beginning">
+        <div class="caption">
+          <strong>Overcoming Bad Beginning (Hyperbola Problem):</strong> Starting with an incorrect prefix for the hyperbola problem, the model receives a correct summary from Peer 4 regarding $BD^2$ approaching 480. This contradicts its own flawed reasoning, prompting self-verification and leading to the correct answer of 480.
+        </div>
+      </div>
+      <!-- <div class="slide-item">
+        <img src="TODO: path_to_another_case_study_image.png" alt="Another Case Study">
+        <div class="caption">
+          TODO: Describe another interesting case study from your paper (e.g., from Appendix D.1 comparing baseline with LeaP on a bad beginning).
+        </div>
+      </div> -->
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 section-title has-text-centered">Roadmap & Future Work</h2>
+    <div class="columns">
+        <div class="column">
+            <h3 class="title is-4 has-text-centered" style="color: #1a73e8;">Current Progress & TODOs</h3>
+            <ul class="todo-list">
+              <li><input type="checkbox" checked disabled> Open source our code, datasets and V1 models (Target: May 13, 2025)</li>
+              <li><input type="checkbox" disabled> Publish our LeaP-R1 models trained by RL (Target: August 2025)</li>
+            </ul>
+        </div>
+        <div class="column">
+            <h3 class="title is-4 has-text-centered" style="color: #1a73e8;">Promising Future Directions</h3>
+            <div class="content">
+                <p><strong>Learning from Peers in Reinforcement Learning:</strong> Integrating LeaP into RL frameworks could empower models to learn collaborative problem-solving strategies more effectively, potentially unlocking greater capabilities.</p>
+                <p><strong>Learning from Peers with Different Expertise:</strong> Leveraging peers with specialized skills (e.g., some using web search, others using code execution) could significantly enhance reasoning quality, especially for multifaceted problems.</p>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX" style="background-color: #f8f9fa;">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3 section-title has-text-centered">BibTeX</h2>
+    <pre class="bibtex-code"><code>@article{luo2025learning,
+  title={Learning from Peers in Reasoning Models},
+  author={Luo, Tongxu and Du, Wenyu and Bi, Jiaxi and Chung, Stephen and Tang, Zhengyang and Wang, Benyou},
+  journal={arXiv preprint arXiv:TODO_YOUR_ARXIV_ID},
+  year={2025}
+}
+</code></pre>
+  <p class="has-text-centered" style="margin-top:1rem;"><i>(Please update with the correct arXiv ID once available. The provided BibTeX was for a different paper.)</i></p>
   </div>
 </section>
 
 <script>
   $(document).ready(function(){
-    $('.slider').slick({
-      dots: true, // 显示导航点
-      infinite: true, // 无限循环
-      speed: 500, // 切换速度
-      slidesToShow: 2, // 每次显示的幻灯片数量
-      slidesToScroll: 1, // 每次滚动的幻灯片数量
-      prevArrow: '<button type="button" class="slick-prev">Previous</button>', // 上一个箭头
-      nextArrow: '<button type="button" class="slick-next">Next</button>', // 下一个箭头
-      adaptiveHeight: true, // 自适应高度
+    $('.case-study-slider').slick({
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1, /* Show 1 full case at a time */
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 5000, /* Change slide every 5 seconds */
+      adaptiveHeight: false, /* Set to false if all captions have similar height or use min-height */
+      prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
+      nextArrow: '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>',
       responsive: [
         {
-          breakpoint: 768, // 断点宽度
+          breakpoint: 768, // For mobile devices
           settings: {
-            slidesToShow: 1, // 在断点下显示的幻灯片数量
-            slidesToScroll: 1 // 在断点下滚动的幻灯片数量
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false, // Hide arrows on mobile for more space if needed
           }
         }
       ]
     });
+
+    // Optional: Random Gradio link (if you uncomment the demo button)
+    /*
+    const urls = [
+      'https://bb0eec8976f38a480c.gradio.live',
+      'https://94c50413658b59829f.gradio.live',
+      'https://16440e488436f49d99.gradio.live',
+      'https://02edd560d60615d755.gradio.live',
+    ];
+    const randomIndex = Math.floor(Math.random() * urls.length);
+    const randomURL = urls[randomIndex];
+    if(document.getElementById('randomLink')) {
+        document.getElementById('randomLink').href = randomURL;
+    }
+    */
   });
 </script>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Main Results</h2>
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-six-fifths">
-        <img id="model" width="80%" src="images/results.jpg">
-        <h3 class="subtitle has-text-centered">
-          <p style="font-family:Times New Roman"><b>We evaluate the baseline and our LeaP with three types of routers on AIME 2024 and 2025, AIMO 2025 and GPQA Diamond. All of our methods outperform baseline significantly. Since DeepSeek-R1-671B does not have an official AIMO 2025 score, we evaluate it on the official website by repeating the inference four times. The R1-7B and R1-14B represent the 7B and 14B versions of DeepSeek-R1-Distill-Qwen.</b></p>
-        </h3>
-      </div>
-    </div>
-    <div class="columns is-centered">
-
-      <!-- 3B. -->
-      <!-- <div class="column">
-        <div class="content">
-          <h2 class="title is-4">3B</h2>
-          <p>
-            Training 3B LLMs with 300B tokens. $G_\text{stack}$ significantly outperforms scratch in loss.
-          </p>
-          <div class="item item-chair-tp">
-            <img src="./images/loss/3B.jpg" alt="3B-sp" id="3B-sp" height="100%">
-          </div>
-        </div>
-      </div> -->
-      <!--/ 3B. -->
-
-      <!-- 7B. -->
-      <!-- <div class="column">
-        <h2 class="title is-4">7B</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              Training 7B LLMs with 300B tokens. $G_\text{stack}$ significantly outperforms scratch in loss.
-            </p>
-            <div class="item item-chair-tp">
-              <img src="./images/loss/7B.jpg" alt="7B-sp" id="7B-sp" height="100%">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-    <!--/ 7B. -->
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3">TODO</h2>
-    <ul>
-      <li><input type="checkbox" checked disabled> Open source our code, datasets and V1 models -- 2025.5.10</li>
-      <li><input type="checkbox" disabled> Publish our LeaP-R1 models trained by RL -- 2025.8</li>
-      <!-- <li><input type="checkbox" disabled> Refactor our code to make it more concise -- 2024.7</li> -->
-    </ul>
-  </div>
-</section>
-
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{du2024stacking,
-      title={Stacking Your Transformers: A Closer Look at Model Growth for Efficient LLM Pre-Training},
-      author={Du, Wenyu and Luo, Tongxu and Qiu, Zihan and Huang, Zeyu and Shen, Yikang and Cheng, Reynold and Guo, Yike and Fu, Jie},
-      journal={arXiv preprint arXiv:2405.15319},
-      year={2024}
-    }
-</code></pre>
-  </div>
-</section>
-
-
-
-
-<section class="section" id="Acknowledgement">
-  <div class="container is-max-desktop content">
-    <h2 class="title">Acknowledgement</h2>
-    <p>
-      This website is adapted from <a
-      href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, licensed under a <a rel="license"
-                                          href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-      Commons Attribution-ShareAlike 4.0 International License</a>.
-    </p>
-  </div>
-</section>
 
 </body>
 </html>
